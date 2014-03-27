@@ -63,7 +63,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   text[7] = "聯合";
   text[8] = "新亞";
   text[9] = "崇基";
-  text[10] = "中大";
+  text[10] = "崇基";
   text[11] = "崇基";
   text[12] = "新亞";
   text[13] = "聯合";
@@ -152,24 +152,17 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 };
 
 HTMLActuator.prototype.message = function (won) {
-  var mytxt=new Array(11);
-  mytxt[0]="我哋DEM返個和聲beat好唔好呀?";
-  mytxt[1]="DEM返個和聲beat先啦";
-  mytxt[2]="和！聲！";
-  mytxt[3]="我哋DEM返個和聲beat好唔好呀！？";
-  mytxt[4]="和盡天地風雲之聲！";
-  mytxt[5]="環抱山水日月之景！";
-  mytxt[6]="婆娑樹影！人傑地靈！";
-  mytxt[7]="育和聲一代菁英！";
-  mytxt[8]="立和聲千秋美名！";
-  mytxt[9]="和聲!和聲!和聲!";
-  mytxt[10]="URRSH！";
+  var mytxt=new Array(4);
+  mytxt[0]="好明顯電腦判錯我輸啦";
+  mytxt[1]="不如重賽啊";
+  mytxt[2]="重賽到應文攞傅盃";
+  mytxt[3]="In傅盃莊We Trust";
 
 
 
   var text3 = function (m) { var r = 0; while (m > 1) r++, m >>= 1; return r; }
   var type    = won ? "game-won" : "game-over";
-  var message = won ? "中大歡迎你！" : mytxt[text3(maxscore)-3];
+  var message = won ? "崇基本是一家親　玩玩何必太認真" : mytxt[text3(maxscore)-3];
 
   if (typeof ga !== "undefined") {
     ga("send", "event", "game", "end", type, this.score);
@@ -193,12 +186,12 @@ HTMLActuator.prototype.scoreTweetButton = function () {
   var tweet = document.createElement("a");
   tweet.classList.add("twitter-share-button");
   tweet.setAttribute("href", "https://twitter.com/share");
-  tweet.setAttribute("data-via", "ymll");
-  tweet.setAttribute("data-url", "http://ymll.github.io/2048/full");
-  tweet.setAttribute("data-counturl", "http://ymll.github.io/2048/");
+  tweet.setAttribute("data-via", "ilovehku");
+  tweet.setAttribute("data-url", "http://ilovehku.github.io/2048/full");
+  tweet.setAttribute("data-counturl", "http://ilovehku.github.io/2048/");
   tweet.textContent = "Tweet";
 
-  var text = "I scored " + this.score + " points in 2048-CUHK edition, a game where you " +
+  var text = "I scored " + this.score + " points in 2048-CCC edition, a game where you " +
              "join numbers to score high! #CUHK2048";
   tweet.setAttribute("data-text", text);
 
